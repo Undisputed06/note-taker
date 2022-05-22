@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 //Instantiate the server
 const app = express();
 
-const { notes } = require('./Develop/db/db.json')
+const {notes} = require('./Develop/db/db.json')
 
 //parse incoming string or array data
 app.use(express.urlencoded({extended: true}));
@@ -15,7 +15,7 @@ app.use(express.json());
 
 //test adding route
 app.get('/api/notes', (req, res) => {
-    res.send('Hello!');
+    res.send(notes);
   });
 
 
