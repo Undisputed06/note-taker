@@ -28,6 +28,22 @@ function createNewNote(body, notesArray) {
     );
     return note ;
   }
+
+function removeNote(id, notesArray){
+    for(i =0; i < notesArray.length; i ++){
+        let note = notesArray[i];
+
+        if(note.id == id){
+            notesArray.splice(i, 1);
+            fs.writeFileSync(
+                path.join(__dirname, "./Develop/db/db.json"),
+                JSON.stringify({notes: notesArray}, null, 2)
+              );
+              break;
+        }
+
+    }
+}
   
 
 //returns all notes
@@ -62,6 +78,10 @@ app.post('/api/notes', (req, res) => {
     
   });
 
+  app.delete('/api/notes/:id', (req, res) => {
+      newNotes = removeNote(req.params.id, notes)
+      res.json(newNotes);
+  })
 
 
 //make our server listen on port 5000 or env port
