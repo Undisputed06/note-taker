@@ -21,9 +21,8 @@
   Run npm start to start the server from terminal 
 
  
-  ## Screenshot
-
-
+  ## Screenshot 
+  ![Screen Shot 2022-05-22 at 10 47 27 PM](https://user-images.githubusercontent.com/52983305/169739966-a319806e-474b-400f-a657-b401e90d7c9a.png)
 
   ## Tests
   Run npm test
